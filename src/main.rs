@@ -28,7 +28,7 @@ pub async fn index() -> impl Responder {
 pub async fn css() -> impl Responder {
     let mut headers = HeaderMap::new();
     headers.insert(header::CONTENT_TYPE, HeaderValue::from_str("text/css").unwrap());
-    let css = std::fs::read_to_string("templates/assets/tailwind.css").unwrap();
+    let css = std::fs::read_to_string("output/style.css").unwrap();
     return  HttpResponse::Ok().body(css);
  
 }
