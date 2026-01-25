@@ -2,15 +2,24 @@
 <html>
   <head>
     <link href="./css" rel="stylesheet" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.8/dist/htmx.js"
+      integrity="sha384-ezjq8118wdwdRMj+nX4bevEi+cDLTbhLAeFF688VK8tPDGeLUe0WoY2MZtSla72F"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <nav class="flex bg-blue-500 p-3">
       <img class="w-14 flex-none" alt="logo image " />
       <div class="flex-grow flex justify-center">
         <input
-          type="search"
           class="bg-purple-white shadow rounded border-2 p-3 border-amber-500"
           placeholder="Search"
+          type="text"
+          hx-post="/search"
+          name="search"
+          hx-trigger="keyup changed delay:500ms"
+          hx-target="#search-results"
         /><svg
           xmlns="http://www.w3.org/2000/svg"
           width="46"
@@ -100,5 +109,6 @@
         </ul>
       </div>
     </nav>
+    <div id="search-results" class="flex justify-center p-6 space-x-2"></div>
   </body>
 </html>

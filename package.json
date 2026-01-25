@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "css::build": "npx tailwindcss -i ./templates/assets/tailwind.css -o ./output/style.css --watch",
+    "server::watch":"watchexec -e rs -r cargo run"
   },
   "author": "",
   "license": "ISC",
