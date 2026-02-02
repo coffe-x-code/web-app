@@ -1,10 +1,11 @@
 use actix_web::{
-    App, HttpResponse, HttpServer, Responder, Result, get,
+    App, HttpResponse, HttpServer, Responder, get,
     http::header::{self, HeaderMap, HeaderValue},
     post, web,
 };
 use serde::Serialize;
 use tera::{Context, Tera};
+mod show_product;
 struct AppState {
     tera: Tera,
 }
@@ -50,6 +51,7 @@ pub async fn css() -> impl Responder {
 #[post("/search")]
 pub async fn search(data: web::Data<AppState>) -> impl Responder {
     let search_result_template_name: String = String::from("search_result.html");
+    let product = show_product::retrive_product();
     let product1 = Product {
         id: 32,
         name: String::from("protein"),

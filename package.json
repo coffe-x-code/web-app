@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "css::build": "npx tailwindcss -i ./templates/assets/tailwind.css -o ./output/style.css --watch",
-    "server::watch":"watchexec -e rs -r cargo run"
+    "server::watch":"watchexec -e rs -r cargo run",
+    "db::start":"docker compose up"
   },
   "author": "",
   "license": "ISC",
