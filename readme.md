@@ -11,8 +11,9 @@
 
 ### other tech can be explored :
 
-- htmx
-- database psql
+- htmx => done
+- database psql => done
+- adding integration test
 
 ### quickstart
 
